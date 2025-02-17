@@ -1,5 +1,5 @@
-const aiService = require('../Services/ai.service.js');
-export async function getReview(req, res) {
+const aiService = require('../services/ai.service.js');
+module.exports.getReview = async(req,res) => {
     const code = await  req.body.code;
     
     try {
@@ -12,4 +12,4 @@ export async function getReview(req, res) {
     } catch (error) {   
         res.status(500).send(error.message);
     }
-}   
+}   ;
