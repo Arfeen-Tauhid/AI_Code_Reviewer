@@ -119,8 +119,12 @@ const model = genAI.getGenerativeModel(
 );
 
 async function generateContent(prompt) {
-    const result = await model.generateContent(prompt);
-    return result.response.text();
+    try {
+        const result = await model.generateContent(prompt);
+        return result.response.text();
+    } catch (error) {
+        throw error;
+    }
 }
 
 module.exports = generateContent;

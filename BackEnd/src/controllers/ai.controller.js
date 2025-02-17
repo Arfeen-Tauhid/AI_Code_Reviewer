@@ -1,6 +1,5 @@
 const aiService = require('../Services/ai.service.js');
-
-module.exports.getReview= async (req, res) => {
+export async function getReview(req, res) {
     const code = await  req.body.code;
     
     try {
@@ -13,4 +12,4 @@ module.exports.getReview= async (req, res) => {
     } catch (error) {   
         res.status(500).send(error.message);
     }
-};   
+}   
